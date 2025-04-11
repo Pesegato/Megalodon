@@ -1,0 +1,12 @@
+
+#echo Megalodon
+bite () {
+   DEST_FILE=$MEGALODON_HOME/bite
+   echo PWD: "$PWD" > $DEST_FILE
+   find . -type f | while read file
+   do
+      ENTRY=$( md5sum "$file" --tag )
+      ENTRY=$ENTRY' '$( stat -c %a,%u,%g,%s,%Y "$file" ) #ls -ld "$file" | awk '{ print $1; print $5; }' )
+      echo $ENTRY >> $DEST_FILE
+   done
+}

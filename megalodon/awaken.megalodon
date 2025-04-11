@@ -1,0 +1,6 @@
+MEGALODON_HOME=~/.megalodon
+
+awaken () {
+   echo Megalodon init
+   mkdir ~/.megalodon
+}

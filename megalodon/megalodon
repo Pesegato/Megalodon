@@ -1,0 +1,22 @@
+#!/bin/bash
+
+. ./awaken.megalodon
+. ./bite.megalodon
+
+case "$1" in
+
+   awaken | init)
+      echo Megalodon awakened!
+      awaken
+      ;;
+
+   bite | commit)
+      echo Megalodon biting...
+      bite
+      ;;
+
+   *)
+      echo Mega confused
+      ;;
+esac
+
